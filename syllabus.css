@@ -1,0 +1,1192 @@
+ @charset "UTF-8";
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+
+/* color: #edac1a; /* UWEC gold */
+/* background-color: #2b3e85; /* UWEC blue */
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+/* ----------------------------
+        BASIC FORMATTING
+   ---------------------------- */
+
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 125%;
+    line-height: 1.25;
+    margin: 0 1em 0 21%;
+    max-width: 40em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+blockquote {
+    padding: 0.5em 2em 1.5em 2em;
+
+}
+
+hr { clear: both; }
+
+img { max-width: 100%; }
+
+li:empty { display: none; }
+
+sub { font-size: 50%; }
+
+em em { font-style: normal; }
+
+canvas { background-color: white; }
+
+@media print {
+    canvas { background-color: initial; }
+}
+
+
+/* ----------------------------
+        PARAGRAPHS
+   ---------------------------- */
+
+p + p {
+    margin-top: 1em;
+}
+
+p + ul,
+p + ol {
+    margin-top: 0;
+}
+
+p.weekday + p {
+    margin-top: 0;
+}
+
+.hw-due,
+.hw-due + ul {
+    font-size: 90%;
+}
+
+p.hw-due:empty + h4,
+p.hw-due:empty + p {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+/* ----------------------------
+        HEADERS
+   ---------------------------- */
+
+h1 {
+    font-size: 200%;
+    padding-top: 1em;
+    font-weight: normal;
+    clear: both;
+    margin-bottom: .4em;
+}
+
+h2 {
+    font-size: 150%;
+    padding-top: 1em;
+    max-width: 75%;
+    border: 0;
+    font-weight: normal;
+    clear: both;
+    margin-bottom: .2em;
+}
+
+h3 {
+    font-size: 100%;
+    padding-top: 1em;
+    font-weight: bold;
+    max-width: 50%;
+    border-bottom: 1px dotted gray;
+    margin-bottom: .2em;
+}
+
+h4 {
+    font-style: italic;
+    padding-bottom: 0;
+}
+
+/* ----------------------------
+        COMMON CLASSES
+   ---------------------------- */
+   
+*[hidden] {
+    display: none;
+}
+
+.book { font-style: italic; }
+
+.break {
+    border: 1px dashed gray;
+    clear: both;
+    margin: 5em 0;
+    padding: 0;
+    break-before: always;
+    page-break-before: always;
+}
+
+.directions {
+    margin-top: 0;
+    padding-top: 0;
+    font-style: oblique;
+}
+
+.directions em {
+    font-style: normal;
+}
+
+.important {
+    color: red;
+}
+
+.important > a {
+    color: inherit;
+    border-bottom: 1px dotted;
+}
+
+.markdown { /* removed by markdown.js */
+    white-space: pre-wrap;
+}
+
+.pageBottom { 
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+}
+
+.policies {
+    color: gray;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.quote {
+    opacity: 0.7; 
+    margin-left: 45%;
+    font-size: 80%;
+}
+
+.quote > .author {
+    float: right;
+}
+
+.rainbow {
+    background: -webkit-linear-gradient(to bottom right, #feaad4 20%, #f8acab, #fae3bd, #f3fabd, #bdfacd, #a8deff, #dea8f8, #c8beff);
+    background: linear-gradient(to bottom right, #feaad4 20%, #f8acab, #fae3bd, #f3fabd, #bdfacd, #a8deff, #dea8f8, #c8beff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.remove {
+    display: none; 
+}
+
+p.right,
+td.right {
+    text-align: right;
+}
+
+.shiftDown {
+    margin-top: 1em;
+}
+
+.subtle {
+    opacity: 0.4;
+    filter: Alpha(opacity=40); /* IE hack */
+}
+
+.tiny {
+    font-size: 70%;
+}
+
+.warning::before,
+.warning::after {
+    content: " ⚠️ ";
+}
+
+
+/* ----------------------------
+        CENTERING
+   ---------------------------- */
+
+.center {
+    text-align: center;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.centeredData td {
+    text-align: center;
+}
+
+table.centeredData.firstColumnLeft td:first-child {
+    text-align: left;
+}
+
+.vertCenterData th,
+.vertCenterData td {
+    vertical-align: middle;
+}
+
+hr.center {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ----------------------------
+        LISTS
+   ---------------------------- */
+
+ol, ul {
+    margin-left: 1em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+}
+
+ul {
+    list-style: circle;
+}
+
+ul ol, ul ul,
+ol ol, ol ul {
+    margin-bottom: 0;
+}
+
+.noBullets {
+    list-style-type: none;
+}
+
+.spacing li {
+    padding-bottom: 0.5em;
+}
+
+.spacing li li {
+    padding-bottom: 0;
+}
+
+ol.noMargins {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul.noMargins {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+ol.multChoice,
+ol ol {
+    list-style-type: lower-alpha;
+}
+
+ol.multChoice ol,
+ol ol ol {
+    list-style-type: lower-roman;
+}
+
+ul.horizontal {
+    list-style: none;
+    
+}
+
+ul.horizontal li { 
+    display: inline-block;
+    padding-right: 2em;
+}
+
+dl {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+dt {
+    font-style: oblique;
+}
+
+
+/* ----------------------------
+        TABLES
+   ---------------------------- */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+th, td {
+    vertical-align: top;
+}
+
+th {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+td {
+    padding: 0.5em;
+    border:1px solid gray;
+}
+
+table.noBorders td {
+    border: none;
+}
+
+th[hidden],
+td[hidden] {
+    display: table-cell;
+    visibility: hidden;
+}
+
+table.twoCol   td { width: 50%; }
+table.threeCol td { width: 33%; }
+table.fourCol  td { width: 25%; }
+table.fiveCol  td { width: 20%; }
+table.sixCol   td { width: 16%; }
+
+table.quarterSize { width: 24%; }
+table.halfSize { width: 48%; }
+
+table.APA-style {
+    border: 0;
+    width: 100%;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+table.APA-style th,
+table.APA-style td {
+    border: 0;
+    border-bottom: 1px solid black; }
+
+
+/* ----------------------------
+        ANCHORS
+   ---------------------------- */
+
+a {
+    color: blue;
+    text-decoration: none;
+    margin-left: -2px;
+    margin-right: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+a:hover {
+    background-color: lavender;
+    border-radius: 5px;
+}
+
+a.hideLink {
+    color: black;
+    text-decoration: none;
+    border: 0;
+}
+
+
+/* ----------------------------
+        NAVIGATION
+   ---------------------------- */
+
+nav {
+    margin: 0
+}
+
+nav a {
+    color: #999;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+nav#sidebar {
+    height: 100%;
+    width: 20%;
+    margin: 0;
+    padding: 5em 1em 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: right;
+    overflow: hidden;
+    background-color: #eee; /* old browsers */
+    background-image: linear-gradient(to right, #fff 0%, #eee 50%, #eee 100%);
+}
+
+nav#sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav#sidebar ul li:first-child {
+    text-decoration: underline;
+    text-decoration-color: grey;
+}
+
+nav#sidebar ul + ul {
+    margin-top: 1em;
+}
+
+nav#sidebar a {
+    color: slategray;
+}
+
+nav#sidebar a:hover {
+    color: #333;
+}
+
+nav#sidebar a:hover:before {
+    content: "*";
+    padding-right: 3px;
+    display:inline-block; /* https://stackoverflow.com/a/23648865 */
+    text-decoration: none;
+}
+
+nav#sidebar a.selected {
+    background-color: white;
+    color: #333;
+    padding-right: 2em;  /* excessive padding/margin to blend background with content background */
+    margin-right: -2em;
+    display: inline-block;
+    width: 90%;
+    max-width: 8em;
+    border: 1px solid #333;
+    border-right: 0;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+
+nav#courseNav {
+    color: #999;
+    border-top: 1px solid #999;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 0em;
+    padding-right: 0.25em;
+}
+
+nav#courseNav a {
+    position: relative;
+    top: -0.65em;
+    padding: 0 0.75em;
+    border: 1px solid #999;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 0.45em;
+}
+
+nav#courseNav a.selected {
+    border: 1px solid #333;
+    background-color: #eee;
+    color: #333;
+    text-decoration: none;
+    cursor: default;
+}
+
+nav#courseNav a:hover {
+    border: 1px solid #333;
+    color: #333;
+}
+
+
+/* ----------------------------
+        HANDOUTS
+   ---------------------------- */
+
+body.handout {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    max-width: 44em;
+    padding: 0 1em;
+
+}
+
+body.handout h1 {
+    font-size: 125%;
+    border-bottom: 1px solid gray;
+}
+
+body.handout h2 {
+    font-size: 100%;
+    font-weight: bold;
+    border-bottom: 1px dotted gray;
+    width: 50%;
+    padding-top: 1em;
+}
+
+body.handout h3 {
+    font-size: 95%;
+    font-style: italic;
+    border: 0;
+    padding: 0;
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+}
+
+/* ----------------------------
+        RUBRICS
+   ---------------------------- */
+
+.rubric {
+    width: 85%;
+    font-size: 75%;
+    margin: 0 1em 1em 1em;
+    padding: 0.5em;
+    background-color: initial;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: -10px 10px 5px silver;
+}
+
+.rubric h4 {
+    padding-top: 1em;
+}
+
+.rubric h4:first-child {
+    padding-top: 0.25em;
+}
+
+.rubric p {
+    margin: 0.5em 0 0 0;
+    padding: 0.5em 0 0 0;
+}
+
+.rubric h4+p {
+    margin: 0;
+    padding: 0;
+}
+
+.rubric ol,
+.rubric ul {
+    margin: 0 0 0 0.5em;
+    padding: 0 0 0 0.5em;
+    list-style-type: none;
+}
+
+.rubric ul+p {
+    margin-top: 1em;
+}
+
+.rubric hr {
+    border: 1px dotted grey;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.rubric input {
+    margin: 0;
+    padding: 0;
+    width: 1.25em;
+}
+
+.rubric input[type="number"] {
+    border:0;
+    border-bottom:1px solid gray;
+    width: 3em;
+}
+
+.rubric input[type="checkbox"].bigCheck {
+    transform: scaleX(1.75);
+    margin-left: 1em;
+    margin-right: 0.2em;
+}
+
+
+/* ----------------------------
+        GRADING SCALES
+   ---------------------------- */
+
+#grade-scale {
+    float: right;
+    width: 12em;
+    padding: 0.5em;
+    padding-bottom: 0.25em;
+    margin: 0.5em;
+    margin-top: 1em;
+    background-color: #CCC;
+    border: 0;
+    border-radius: 5px;
+}
+
+#grade-scale table {
+    background-color: white;
+}
+
+#grade-scale table th {
+    background-color: #658cb8;
+    color: white;
+    font-weight: normal;
+}
+
+#grade-scale table td {
+    text-align: center;
+    vertical-align: bottom;
+}
+
+#grade-scale caption {
+    font-weight: bold;
+}
+
+
+/* ----------------------------
+        CALENDARS
+   ---------------------------- */
+
+.week {
+    font-size: 90%;
+    margin: 0 0 2em 0;
+    padding: 0;
+    scroll-margin-top: 2em;
+
+}
+
+.week p {
+    margin-bottom: 0;
+}
+
+.week p+h4 {
+    margin-top: 1em;
+}
+
+.week ol, 
+.week ul {
+    margin-top: 0;
+    margin-left: 1em;
+    padding-left: 1em;
+    font-size: 85%;
+}
+
+.week ul {
+    list-style: circle;
+}
+
+.week .weekday+h4 {
+    margin-top: 0;
+}
+
+.week .readings li {
+    list-style-image:url("/images/book-icon.png");
+}
+
+.week .readings .search {
+    cursor: pointer;
+    border-bottom: 1px solid aqua;
+    text-decoration: none;
+}
+
+.week .readings .search:hover {
+    border: 1px solid aqua;
+}
+
+/* daily syllabus CSS */
+
+body.syllabus .week .day {
+    position: relative;
+    left: 8em;
+    top: -0.75em;
+    border-bottom: 2px solid lightsteelblue;
+    padding-bottom: 1em;
+    width: 70%;
+}
+
+body.syllabus h3 {
+    width: 100%;
+    text-decoration: none;
+}
+
+body.syllabus h3:not(.weekTopic) {
+    position: relative;
+    left: -7.5em;
+    top: 1.4em;
+    width: 8em;
+    border: 0;
+    font-weight: normal;
+    padding: 0;
+}
+
+body.syllabus .week .weekday {
+    position: relative;
+    left: -7.5em;
+    top: 1.2em;
+    width: 8em;
+}
+
+body.syllabus .weekTopic {
+    max-width: 90%;
+    border: 0;
+    font-size: 90%;
+    font-weight: normal;
+    font-style: normal;
+    color: antiquewhite;
+    background-color: #658cb8;
+    border-radius: 10px;
+    padding: .25em;
+    padding-left: 1em;
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+
+/* weekly syllabus CSS */
+
+body.weekly .week {
+    border-left: 1px solid grey;
+    margin: 0.5em;
+	margin-bottom: 1em;
+    margin-left: 1em;
+    padding: 0 0 .5em .5em;
+}
+
+body.weekly h3 {
+    border: 0;
+    background-color: white;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+body.weekly h3:first-child {
+	padding-top: 1em; 
+    margin-top: 1em;
+}
+
+body.weekly .week h4 { 
+    margin-top: 1.5em;
+}
+
+
+/* ------------------------------
+        SPACING 
+   ------------------------------ */
+
+.smallskip,
+.smallskip li,
+.spacing li.smallskip {
+    padding-bottom: 10%;
+}
+
+.smallskip-plus,
+.smallskip-plus li,
+.spacing li.smallskip-plus {
+    padding-bottom: 15%;
+}
+
+.medskip,
+.medskip li,
+.spacing li.medskip {
+    padding-bottom: 25%;
+}
+
+.bigskip,
+.bigskip li,
+.spacing li.bigskip {
+    padding-bottom: 45%;
+}
+
+hr.smallskip,
+hr.smallskip-plus,
+hr.medskip,
+hr.bigskip { visibility: hidden; }
+
+ol.smallskip,      ul.smallskip,
+ol.smallskip-plus, ul.smallskip-plus,
+ol.medskip,        ul.medskip,
+ol.bigskip,        ul.bigskip { padding-bottom: 0; }
+
+table.smallskip {
+    padding-bottom: 0;
+    margin-bottom: 4em
+}
+
+table.medskip {
+    padding-bottom: 0;
+    margin-bottom: 1.25in
+}
+
+table.bigskip {
+    padding-bottom: 0;
+    margin-bottom: 3.25in
+}
+
+/* ----------------------------
+        MISCELLANEOUS
+   ---------------------------- */
+
+.assign1:before,
+.week .assign1:before {
+    content: "\2193\0020";
+    color: violet;
+}
+
+
+.assign2:before,
+.week .assign2:before {
+    content: "\2193\2193\0020";
+    color: violet;
+}
+
+
+.assign3:before,
+.week .assign3:before {
+    content: "\2193\2193\2193\0020";
+    color: violet;
+}
+
+button.hint {
+    color: chocolate;
+}
+
+.grades {
+    font-size: 75%;
+    opacity: 0.8;
+    white-space: nowrap;
+}
+
+.grades:before {
+	content: "(";
+}
+
+.grades:after {
+	content: ")";
+}
+
+.quiz-heading {
+    float: right;
+    font-size: 60%;
+    position: relative;
+    top: 0.75em;
+}
+
+/* ----------------------------
+        GRADE TABLES
+   ---------------------------- */
+.gradeTable {
+    font-size: 50%;
+    margin-top: -1.5em;
+    text-align: center;
+}
+
+.gradeTable input[type=number] {
+    width: 6em;
+}
+
+.gradeTable button {
+    font-size: 50%;
+}
+
+/* ----------------------------
+        ORIENTATION
+   ---------------------------- */
+
+@media (orientation: portrait) {
+    body {
+        margin: 0;
+        padding: 1em;
+        margin-top: 3em;
+    }
+
+    .no-mobile {
+        display: none;
+    }
+
+    nav#sidebar {
+        height: auto;
+        width: 100%;
+        width: calc(100% - 2em); /* offset body padding, http://www.impressivewebs.com/width-100-percent-css/ */
+        width: -webkit-calc(100% - 2em); /* mobile safari */
+        min-width: 0;
+        margin: 0;
+        padding: 1em;
+        text-align: left;
+        background: #eeeeee;
+        border-bottom: 1px solid gray;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+
+    nav#sidebar ul li {
+        display: inline;
+        margin: 0;
+        margin-right: 0.25em;
+        padding-bottom: 0;
+    }
+
+    nav#sidebar ul + ul {
+        margin-top: 0;
+    }
+
+    nav#sidebar a {
+        padding: 0;
+    }
+
+    nav#sidebar a:hover {
+        color: #999;
+        text-decoration: none;
+        background: black;
+    }
+
+    nav#sidebar a.selected {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        border: 0;
+        display: inline;
+        width: auto;
+        min-width: 0;
+        font-weight: bold;
+        background-color: #eee;
+    }
+
+    nav#sidebar a:hover:before {
+        content: none;
+    }
+
+    nav#courseNav {
+        border: 0;
+        text-align: center;
+    }
+
+    nav#courseNav a {
+        border-radius: 0;
+        padding: 0.25em;
+    }
+
+    nav#calNav button {
+        font-size: 125%;
+    }
+
+    body.syllabus .week .day {
+        position: static;
+        width: 90%;
+    }
+
+    body.syllabus .week .weekday,
+    body.syllabus .week h3:not(.weekTopic) {
+        position: static;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    body.syllabus .week h3:not(.weekTopic) {
+        width: initial;
+    }
+
+    #grade-scale {
+        width: initial;
+    }
+
+    .day {
+        margin-left: 1em;
+    }
+}
+
+@media screen {
+    .noscreen { display: none; }
+}
+
+@media print {
+    body {
+        padding: 0.5em;
+        font-family: Garamond, serif;
+        font-size: 110%;
+        background-color: white;
+        line-height: 1.1;
+        height: 11in;
+        width: 8.5in;
+        margin: 0;
+        color: black;
+    }
+
+    body.handout {
+        font-size: 100%;
+        height: 100%;
+    }
+
+    #quote { display: none; }
+
+    h1,
+    h2,
+    h3 {
+        font-family: Helvetica, Arial, sans-serif;
+    }
+
+    h1 {
+        padding: 0;
+        font-size: 110%;
+    }
+
+    h2 {
+        font-size: 105%;
+    }
+
+    h3 {
+        font-size: 100%;
+        font-weight: normal;
+    }
+
+    canvas {
+        filter: brightness(0.75); /* make darker for copying */
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    #grade-scale {
+        width: 10em;
+    }
+
+    button,
+    nav,
+    #key,
+    footer,
+    .noprint,
+    .hidden,
+    .quote {
+        display: none;
+    }
+
+    .break {
+        margin: 0;
+        visibility: hidden;
+    }
+
+    button.hint {
+        display: none;
+    }
+
+    .rubric { /* fix for Chrome bug */
+        -webkit-print-color-adjust: exact;
+        -webkit-filter: opacity(1);
+    }
+
+    .subtle { /* make darker for copying */
+        opacity: 0.7;
+    }
+}
+
+/* ----------------------------
+        DARK MODE
+   ---------------------------- */
+
+:root {
+    --dark-bg-color: black;
+    --dark-text-color: ghostwhite;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-bg-color);
+        color: var(--dark-text-color);
+    }
+
+    a {
+        color: #00bfff;
+    }
+
+    .norm, a.hideLink {
+        color: var(--dark-text-color);
+    }
+
+    a:hover {
+	    background-color: transparent;
+	    text-decoration: underline;
+    }
+
+    nav#sidebar {
+        background-color: #252525;
+        background-image: none;
+        color: var(--dark-text-color);
+    }
+
+    nav#sidebar a {
+	    color: #999;
+    }
+
+    nav#sidebar a:hover {
+	    color: #999;
+    }
+
+    nav#sidebar a.selected {
+        background-color: var(--dark-bg-color);
+        color: var(--dark-text-color);
+    }
+    
+
+    nav#courseNav a {
+        background-color: var(--dark-bg-color);
+    }
+
+    nav#courseNav a.selected {
+        background-color: silver;
+    }
+
+    footer a {
+        color: var(--dark-text-color);
+    }
+
+    #grade-scale {
+        background-color: var(--dark-bg-color);
+    }
+
+    #grade-scale table {
+        background-color: var(--dark-bg-color);
+    }
+
+    body.weekly h3 {
+        background-color: var(--dark-bg-color);
+    }
+}
+
+@media (prefers-color-scheme: dark) and (orientation: portrait) {
+    nav#sidebar a.selected { background-color: #252525; }
+}
